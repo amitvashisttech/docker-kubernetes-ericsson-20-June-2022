@@ -1,0 +1,1 @@
+# docker-kubernetes-ericsson-20-June-2022
