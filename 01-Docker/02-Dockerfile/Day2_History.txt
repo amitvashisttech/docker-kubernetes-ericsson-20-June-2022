@@ -1,0 +1,28 @@
+```
+ 209  mkdir 02-Dockerfile
+  210  cd 02-Dockerfile/
+  211  s
+  212  ls
+  213  mkdir apache/v1 -p
+  214  cd apache/v1/
+  215  ls
+  216  vim Dockerfile
+  217  docker ps
+  218  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  219  curl 172.17.0.2
+  220  vim Dockerfile
+  221  ls
+  222  docker build -t myapache:v1 .
+  223  docker images
+  224  docker run -d  --name test-myapache-1 myapache:v1
+  225  docker ps
+  226  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  227  curl 172.17.0.3
+  228  docker ps
+  229  docker attach fc6909adb99f
+  230  curl 172.17.0.3
+  231  curl 172.17.0.2
+  232  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  233  curl 172.17.0.2
+
+```
