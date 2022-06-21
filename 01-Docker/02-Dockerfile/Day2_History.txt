@@ -188,3 +188,46 @@
   395  docker rmi 9ac97bd6eaca --force
   396  docker images
 ```
+
+```
+ 408  docker images
+  409  docker push myapache:v1
+  410  docker login
+  411  docker push myapache:v1
+  412  docker tag myapache:v1 amitvashist7/myapache-test:v1
+  413  docker images
+  414  docker push amitvashist7/myapache-test:v1
+  415  docker images
+  416  docker tag myapache:v2 amitvashist7/myapache-test:v2
+  417  docker tag myapache:v3 amitvashist7/myapache-test:v3
+  418  docker tag myapache:v3 amitvashist7/myapache-test:v4
+  419  docker tag myapache:v4 amitvashist7/myapache-test:v4
+  420  docker tag myapache:v5 amitvashist7/myapache-test:v5
+  421  docker tag myapache:v6 amitvashist7/myapache-test:v6
+  422  docker tag myapache:latest amitvashist7/myapache-test:latest
+  423  docker image
+  424  docker images
+  425  docker push amitvashist7/myapache-test:v2
+  426  cat docker-kubernetes-ericsson-20-June-2022/01-Docker/02-Dockerfile/apache/v1/Dockerfile
+  427  docker inspect ubuntu:16.04
+  428  docker history  ubuntu:16.04
+  429  docker push amitvashist7/myapache-test:v3
+  430  docker push amitvashist7/myapache-test:v4
+  431  docker push amitvashist7/myapache-test:v5
+  432  docker push amitvashist7/myapache-test:v6
+  433  docker images
+  434  docker push amitvashist7/myapache-test:latest
+  435  docker images
+  436  docker images | grep -i myapache
+  437  hsit
+  438  history  | grep -i latest
+  439  docker images | grep -i myapache
+  440  docker images | grep -i myapache | awk -F " " '{print $3}'
+  441  docker rmi $(docker images | grep -i myapache | awk -F " " '{print $3}')
+  442  docker rmi $(docker images | grep -i myapache | awk -F " " '{print $3}')  --force
+  443  docker images
+  444  docker logout
+  445  docker run -d --name myapache-container-1 amitvashist7/myapache-test
+  446  docker ps
+  447  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+```
