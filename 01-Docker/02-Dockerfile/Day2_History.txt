@@ -24,5 +24,167 @@
   231  curl 172.17.0.2
   232  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
   233  curl 172.17.0.2
-
+  234  ls
+  235  cd ..
+  236  ls
+  237  history
+  238  ls
+  239  vim Day2_History.txt
+  240  ls
+  241  cd ..
+  242  ls
+  243  git add . ; git commit -m "01-Docker/02-Dockerfile" ; git push
+  244  ls
+  245  watch -n .5 docker ps -a
+  246  watch -n .5 docker ps -a &&
+  247  watch -n .5 docker ps -a &
+  248  ps -ef | grep -i 5990
+  249  ls
+  250  cd 02-Dockerfile/
+  251  ls
+  252  cd apache/
+  253  ls
+  254  cd ..
+  255  ls
+  256  cd apache/
+  257  ls
+  258  cp -rf v1 v2
+  259  ls
+  260  cd v2/
+  261  ls
+  262  vim index.html
+  263  ls
+  264  vim Dockerfile
+  265  ls
+  266  docker build -t myapache:v2 .
+  267  docker images
+  268  cd
+  269  docker ps
+  270  docker run -d  --name test-myapache-2 myapache:v2
+  271  docker ps
+  272  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  273  curl 172.17.0.2
+  274  curl 172.17.0.3
+  275  curl -vv 172.17.0.3
+  276  docker images
+  277  docker ps
+  278  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  279  curl 172.17.0.4
+  280  curl 172.17.0.4:8080
+  281  ls
+  282  cd docker-kubernetes-ericsson-20-June-2022/01-Docker/02-Dockerfile/
+  283  ls
+  284  cd apache/
+  285  ls
+  286  cp -rf v2 v3
+  287  ls
+  288  cd v3/
+  289  ls
+  290  vim ports.conf
+  291  ls
+  292  vim Dockerfile
+  293  ls
+  294  vim index.html
+  295  ls
+  296  docker build -t myapache:v3 .
+  297  docker ps
+  298  docker images
+  299  docker run -d  --name test-myapache-3 myapache:v3
+  300  docker ps
+  301  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  302  curl 172.17.0.5
+  303  curl 172.17.0.5:8081
+  304  docker images
+  305  ls
+  306  cd ..
+  307  ls
+  308  cp -rf v3 v4
+  309  ls
+  310  cd v4/
+  311  ls
+  312  vim Dockerfile
+  313  ls
+  314  docker build -t myapache:v4 .
+  315  docker run -d  --name test-myapache-4 myapache:v4
+  316  docker ps
+  317  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  318  curl 172.17.0.6:8081
+  319  curl 172.17.0.6
+  320  curl 172.17.0.6:8081
+  321  ls
+  322  cd ..
+  323  ls
+  324  cp -rf v4 v5
+  325  ls
+  326  cd v5/
+  327  ls
+  328  vim Dockerfile
+  329  docker build -t myapache:v5 .
+  330  docker images
+  331  docker run -d  --name test-myapache-5 myapache:v5
+  332  docker ps
+  333  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  334  curl telnet 172.17.0.7
+  335* curl telnet 172.17.0.7 8081
+  336  curl telnet 172.17.0.7:8081
+  337  curl telnet://172.17.0.7:8081
+  338  curl telnet://172.17.0.7 8081
+  339  curl 172.17.0.7:8081
+  340  curl 172.17.0.7:3306
+  341  curl telnet://172.17.0.7:8081
+  342  curl telnet://172.17.0.7:80
+  343  curl telnet://172.17.0.7:3306
+  344  curl telnet://172.17.0.7:8081
+  345  docker ps
+  346  curl 172.17.0.7:8081
+  347  s
+  348  ls
+  349  cd ..
+  350  ls
+  351  cd ../../
+  352  ls
+  353  git add . ; git commit -m "01-Docker/02-Dockerfile" ; git push
+  354  docker images
+  355  ls
+  356  cd 02-Dockerfile/
+  357  ls
+  358  cd apache/
+  359  ls
+  360  cp -rf v5 v6
+  361  ls
+  362  cd v6/
+  363  ls
+  364  vim Dockerfile
+  365  ls
+  366  vim ports.conf
+  367  l
+  368  ls
+  369  vim index.html
+  370  ls
+  371  docker build -t myapache:v5 .
+  372  docker images
+  373  docker tag 9ac97bd6eaca myapache:v6
+  374  docker images
+  375  docker tag 67f0f1ac3e83 myapache:v5
+  376  docker images
+  377  docker tag 9ac97bd6eaca myapache:latest
+  378  docker images
+  379  docker run -d  --name test-myapache-6 myapache
+  380*
+  381  cat Dockerfile
+  382  docker inspect --format '{{.Name}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  383  curl 172.17.0.8
+  384  curl 172.17.0.8:8081
+  385  curl 172.17.0.8:8080
+  386  vim Dockerfile
+  387  docker build -t myapache:v6 .
+  388  docker images
+  389  docker tag a9b6fb0688fd myapache:latest
+  390  docker images
+  391  docker rmi 9ac97bd6eaca
+  392  docker rmi 9ac97bd6eaca --force
+  393  docker kill $(docker ps -q)
+  394  docker rm $(docker ps -aq)
+  395  docker rmi 9ac97bd6eaca --force
+  396  docker images
 ```
