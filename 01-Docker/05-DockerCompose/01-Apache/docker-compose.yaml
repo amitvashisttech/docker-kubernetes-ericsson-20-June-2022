@@ -1,0 +1,19 @@
+---
+
+nginx: 
+  image: nginx 
+
+
+myapache:
+  image: amitvashist7/myapache-test 
+  ports: 
+    - '8080:8080'
+
+
+
+myapache-2:
+  image: amitvashist7/myapache-test 
+  volumes:
+  - /root/docker-kubernetes-ericsson-20-June-2022/01-Docker:/var/www/html/myapp 
+  ports: 
+    - '8081:8080'
