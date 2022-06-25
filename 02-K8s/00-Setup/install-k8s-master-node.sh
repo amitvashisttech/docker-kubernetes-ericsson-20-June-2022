@@ -35,7 +35,8 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 sleep 1 
 
 echo "******************* Deploying kubernetes - Calico Network ***********************"
-kubectl apply -f https://docs.projectcalico.org/archive/v3.13/manifests/calico.yaml
+kubectl apply -f calico.yaml
+#kubectl apply -f https://docs.projectcalico.org/archive/v3.13/manifests/calico.yaml
 
 #kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 
